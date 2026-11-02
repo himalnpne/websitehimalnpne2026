@@ -1,0 +1,125 @@
+/* Styles for pages/Privacy.jsx. Responsive and motion rules are kept with this component. */
+.v9-privacy-head h1 {
+  font-size: clamp(50px,6.5vw,90px);
+  line-height: 1.1;
+  letter-spacing: -.065em;
+  margin: 24px 0;
+}
+.v9-privacy-head h1 em {
+  font-style: normal;
+  color: var(--red);
+}
+.v9-privacy-head p {
+  font-size: 20px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 670px;
+}
+.v9-privacy-page {
+  padding-top: 105px;
+  padding-bottom: 125px;
+}
+.v9-privacy-head {
+  padding-bottom: 50px;
+  border-bottom: 1px solid var(--line);
+}
+.v9-privacy-head time {
+  font-size: 13px;
+  color: var(--muted);
+}
+.v9-privacy-layout {
+  display: grid;
+  grid-template-columns: 235px minmax(0,780px);
+  gap: 60px;
+  padding-top: 64px;
+}
+.v9-privacy-layout>aside {
+  position: sticky;
+  top: 130px;
+  align-self: start;
+  font-size: 13px;
+  color: var(--muted);
+}
+.v9-privacy-layout>aside p {
+  margin: 25px 0 8px;
+  font-size: 14px;
+}
+.v9-privacy-layout>aside a {
+  color: var(--red);
+  font-weight: 600;
+}
+.v9-privacy-section {
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 20px;
+  border-bottom: 1px solid var(--line);
+  padding: 0 0 34px;
+  margin-bottom: 35px;
+}
+.v9-privacy-section>span {
+  font-size: 13px;
+  color: var(--red);
+}
+.v9-privacy-section h2 {
+  font-size: 28px;
+  letter-spacing: -.04em;
+  margin: 0 0 13px;
+}
+.v9-privacy-section p {
+  font-size: 17px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.85;
+}
+.v9-policy-note {
+  padding: 20px;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  font-size: 13px;
+  color: var(--muted);
+}
+@media(max-width:650px) {
+  .v9-privacy-page {
+    padding-top: 65px;
+    padding-bottom: 82px;
+  }
+}
+@media(max-width:650px) {
+  .v9-privacy-layout {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+}
+@media(max-width:650px) {
+  .v9-privacy-head p {
+    font-size: 17px;
+  }
+}
+@media(max-width:650px) {
+  .v9-privacy-layout>aside {
+    position: static;
+  }
+}
+@media(max-width:650px) {
+  .v9-privacy-section {
+    grid-template-columns: 25px 1fr;
+    gap: 12px;
+  }
+}
+@media(max-width:650px) {
+  .v9-privacy-section h2 {
+    font-size: 22px;
+  }
+}
+@media(max-width:650px) {
+  .v9-privacy-section p {
+    font-size: 16px;
+  }
+}
+.v9-privacy-section a {
+  color: var(--red);
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

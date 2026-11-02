@@ -1,0 +1,15 @@
+import './ArticleParts.css';
+import React, {useState} from 'react';
+import {motion,AnimatePresence} from 'motion/react';
+import {Check,Copy,Lightbulb,ArrowUpRight,Info,AlertTriangle,Terminal} from 'lucide-react';
+export function H2({id,children}){return <h2 id={id} className="post-h2">{children}</h2>}
+export function H3({id,children}){return <h3 id={id} className="post-h3">{children}</h3>}
+export function Lead({children}){return <p className="post-lead">{children}</p>}
+export function Quote({children,by}){return <blockquote className="post-quote"><div className="quote-icon">“</div><p>{children}</p>{by&&<cite>— {by}</cite>}</blockquote>}
+export function Callout({title='A SMALL NOTE',children,kind='idea'}){const Icon=kind==='warning'?AlertTriangle:kind==='info'?Info:Lightbulb;return <div className={`post-callout callout-${kind}`}><div className="callout-label"><Icon size={18}/>{title}</div><div>{children}</div></div>}
+export function CodeWindow({title='example.jsx',children}){const [copied,setCopied]=useState(false);async function copy(){try{await navigator.clipboard.writeText(typeof children==='string'?children:String(children));setCopied(true);window.setTimeout(()=>setCopied(false),1800)}catch{setCopied(false)}}return <div className="post-code"><div className="code-head"><span><Terminal size={15}/>{title}</span><button onClick={copy} aria-label="Copy code">{copied?<Check size={16}/>:<Copy size={16}/>} {copied?'COPIED':'COPY'}</button></div><pre><code>{children}</code></pre></div>}
+export function Metrics({items}){return <div className="post-metrics">{items.map((item,i)=><div key={i}><strong>{item.value}</strong><span>{item.label}</span></div>)}</div>}
+export function Checklist({items}){return <ul className="post-checklist">{items.map((item,i)=><li key={i}><Check size={17}/><span>{item}</span></li>)}</ul>}
+export function SplitNote({label,title,children}){return <div className="post-split-note"><span>{label}</span><div><h3>{title}</h3><p>{children}</p></div></div>}
+export function FeatureFigure({kicker='FIG / 01',headline,detail,variant='one'}){return <figure className={`post-figure figure-${variant}`}><div className="figure-inner"><span>{kicker}</span><strong>{headline}</strong><small>{detail}</small></div><figcaption>{detail}</figcaption></figure>}
+export function DemoSwitcher(){const [tab,setTab]=useState('subtle');const data={subtle:{label:'SUBTLE / EASE',scale:1.04,rotate:2},playful:{label:'PLAYFUL / SPRING',scale:1.12,rotate:-11},bold:{label:'BOLD / EXPLODE',scale:1.25,rotate:15}};return <div className="post-demo"><div className="demo-head"><span>INTERACTIVE / MOTION TUNER</span><span>TRY IT ↓</span></div><div className="demo-tabs">{Object.keys(data).map(t=><button key={t} className={tab===t?'active':''} onClick={()=>setTab(t)} aria-pressed={tab===t}>{t.toUpperCase()}</button>)}</div><div className="demo-stage"><motion.div className="demo-shape" animate={{scale:data[tab].scale,rotate:data[tab].rotate}} transition={tab==='playful'?{type:'spring',stiffness:220,damping:10}:{duration:.6,ease:[.22,1,.36,1]}}>H<span>·</span>N</motion.div></div><div className="demo-label">{data[tab].label}</div></div>}

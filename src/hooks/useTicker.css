@@ -1,0 +1,33 @@
+/* Attribute selectors isolate the controller from legacy per-section animation rules. */
+[data-carousel] {
+ overflow-x: hidden !important;
+ overflow-y: hidden !important;
+ scroll-snap-type: none !important;
+ scroll-behavior: auto !important;
+ overflow-anchor: none;
+ direction: ltr;
+ touch-action: pan-y !important;
+ scrollbar-width: none;
+ cursor: grab;
+}
+[data-carousel]::-webkit-scrollbar { display: none; }
+[data-carousel]:active { cursor: grabbing; }
+[data-carousel]:focus-visible { outline: 2px solid var(--red); outline-offset: -3px; }
+[data-carousel] [data-carousel-track] {
+ display: flex;
+ flex-wrap: nowrap;
+ width: max-content;
+ min-width: max-content;
+ max-width: none !important;
+ gap: 0 !important;
+ padding: 0 !important;
+ overflow: visible !important;
+ animation: none !important;
+ scroll-snap-type: none !important;
+ touch-action: pan-y !important;
+ will-change: transform;
+}
+[data-carousel-group] { flex: 0 0 auto; }
+[data-carousel] article, [data-carousel] .v10-tech-tile { scroll-snap-align: none !important; }
+[data-carousel] img, [data-carousel] a { -webkit-user-drag: none; }
+@media (hover:none) { [data-carousel] { mask-image: none; -webkit-mask-image: none; } }

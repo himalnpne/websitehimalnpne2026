@@ -1,0 +1,58 @@
+/* Styles for components/Ads.jsx. Responsive and motion rules are kept with this component. */
+.ad-placement {
+  position: relative;
+  min-width: 0;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+.ad-caption {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .13em;
+  margin: 0 0 9px;
+}
+.ad-placeholder {
+  background: color-mix(in srgb,var(--soft) 60%,var(--paper));
+  border: 1px dashed var(--line);
+  border-radius: 9px;
+  min-height: var(--ad-height,250px);
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  font-size: 11px;
+  padding: 15px;
+}
+.ad-placeholder span {
+  opacity: .65;
+}
+.ad-leaderboard {
+  --ad-height: 100px;
+  max-width: 900px;
+  min-height: 118px;
+}
+.ad-rectangle {
+  --ad-height: 250px;
+  max-width: 300px;
+  min-height: 275px;
+}
+.ad-infeed {
+  --ad-height: 190px;
+  min-height: 211px;
+}
+.ad-placement ins {
+  min-height: var(--ad-height);
+  overflow: hidden;
+}
+@media(max-width:650px) {
+  .ad-leaderboard {
+    --ad-height: 110px;
+  }
+}
+@media(max-width:650px) {
+  .ad-rectangle {
+    margin-left: 0;
+  }
+}

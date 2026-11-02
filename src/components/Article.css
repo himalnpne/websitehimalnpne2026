@@ -1,0 +1,106 @@
+/* Styles for components/Article.jsx. Responsive and motion rules are kept with this component. */
+.legacy-article p {
+  font-size: 18px;
+  line-height: 1.95;
+}
+.legacy-article h2 {
+  font-size: clamp(27px,3vw,40px);
+  line-height: 1.26;
+  letter-spacing: -.04em;
+  scroll-margin-top: 110px;
+}
+.legacy-article h3 {
+  font-size: clamp(22px,2.4vw,29px);
+  scroll-margin-top: 110px;
+}
+.legacy-article ul {
+  padding-left: 24px;
+  margin: 26px 0 35px;
+}
+.legacy-article li {
+  font-size: 17px;
+  margin: 10px 0;
+  line-height: 1.75;
+}
+.legacy-article blockquote {
+  margin: 44px 0;
+  padding: 28px 34px;
+  border-left: 3px solid var(--red);
+  background: var(--soft);
+  border-radius: 0 11px 11px 0;
+}
+.legacy-article blockquote p {
+  font-size: 21px;
+  font-weight: 500;
+  margin: 0 0 10px;
+}
+.legacy-article cite {
+  color: var(--muted);
+  font-style: normal;
+  font-size: 14px;
+}
+.article-table-scroll {
+  overflow-x: auto;
+  max-width: 100%;
+  margin: 38px 0 45px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.article-table-scroll table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 620px;
+  font-size: 15px;
+}
+.article-table-scroll th,
+.article-table-scroll td {
+  padding: 15px 19px;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  border-right: 1px solid var(--line);
+  vertical-align: top;
+  line-height: 1.6;
+}
+.article-table-scroll th {
+  background: var(--soft);
+  font-weight: 650;
+  white-space: normal;
+}
+.article-table-scroll tr:last-child td {
+  border-bottom: 0;
+}
+.article-callout {
+  background: var(--soft);
+  border-radius: 12px;
+  padding: 35px;
+  margin: 30px 0;
+}
+.article-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 15px;
+  margin-top: 25px;
+}
+.article-stat-grid>div {
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.article-stat-grid strong {
+  font-size: 17px;
+}
+.article-stat-grid span {
+  font-size: 12px;
+  color: var(--muted);
+}
+@media(max-width:650px) {
+  .legacy-article p {
+    font-size: 17px;
+    line-height: 1.85;
+  }
+}
+.v9-inline-ad {
+  margin: 45px 0;
+}

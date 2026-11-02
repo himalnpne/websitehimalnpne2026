@@ -1,0 +1,349 @@
+/* Styles for pages/MyWork.jsx. Responsive and motion rules are kept with this component. */
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 55px 24px;
+}
+.work-card {
+  display: block;
+  min-width: 0;
+}
+.work-card-tilt {
+  transform-style: preserve-3d;
+}
+.work-card-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: start;
+  padding: 19px 1px 0;
+}
+.work-card-info h3 {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -.045em;
+  line-height: 1.22;
+  margin: 0 0 5px;
+}
+.work-card-info p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+}
+.work-arrow {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  font-size: 19px;
+  flex: none;
+  transition: transform .25s,border-color .25s;
+}
+.work-card:hover .work-arrow {
+  transform: translate(3px,-3px);
+  border-color: var(--red);
+}
+.work-page-list {
+  padding: 30px 0 125px;
+}
+.work-filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 35px;
+  gap: 20px;
+}
+.work-filter>div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.work-filter button {
+  border: 1px solid var(--line);
+  background: transparent;
+  color: var(--muted);
+  padding: 9px 16px;
+  border-radius: 100px;
+  font-size: 12px;
+  transition: background .2s,color .2s;
+}
+.work-filter button:hover {
+  border-color: var(--muted);
+  color: var(--ink);
+}
+.work-filter button.selected {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
+.work-filter>span {
+  color: var(--muted);
+  font-size: 12px;
+}
+.full-work-grid {
+  gap: 54px 24px;
+}
+.detail-hero {
+  padding-top: 55px;
+}
+.detail-title {
+  margin: 58px 0 52px;
+}
+.detail-title>span {
+  font-size: 12px;
+  color: var(--red);
+}
+.detail-title h1 {
+  font-size: clamp(53px,7.5vw,105px);
+  font-weight: 500;
+  letter-spacing: -.065em;
+  line-height: 1.08;
+  margin: 10px 0 18px;
+}
+.detail-title p {
+  font-size: 16px;
+  line-height: 1.9;
+  color: var(--muted);
+  max-width: 720px;
+  margin: 0;
+}
+.detail-content {
+  padding: 46px 0 110px;
+}
+.detail-meta {
+  border-bottom: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  gap: 22px;
+  padding: 0 0 42px;
+}
+.detail-meta>div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.detail-meta span {
+  font-size: 11px;
+  color: var(--muted);
+}
+.detail-meta strong {
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.65;
+}
+.detail-body {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 45px;
+  padding-top: 80px;
+}
+.detail-body aside {
+  font-size: 12px;
+  color: var(--muted);
+}
+.detail-body article {
+  max-width: 670px;
+}
+.detail-body section {
+  margin-bottom: 50px;
+}
+.detail-body h2 {
+  font-size: 36px;
+  letter-spacing: -.05em;
+  font-weight: 500;
+  margin-bottom: 17px;
+}
+.detail-body p {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.92;
+}
+.detail-links {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.detail-links a {
+  border-bottom: 1px solid var(--ink);
+  padding: 9px 0;
+  font-size: 13px;
+}
+.detail-links span {
+  font-size: 12px;
+  color: var(--muted);
+}
+.next-project {
+  display: block;
+  background: var(--soft);
+  padding: 72px 0;
+  transition: background .2s;
+}
+.next-project:hover {
+  background: var(--ivory);
+}
+.next-project h2 {
+  font-size: clamp(37px,5vw,69px);
+  letter-spacing: -.058em;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 14px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.next-project h2 span {
+  color: var(--red);
+}
+@media(max-width:620px) {
+  .work-grid {
+    grid-template-columns: 1fr;
+    gap: 37px;
+  }
+}
+@media(max-width:620px) {
+  .work-card-info h3 {
+    font-size: 22px;
+  }
+}
+@media(max-width:620px) {
+  .work-card-info {
+    padding-top: 16px;
+  }
+}
+@media(max-width:620px) {
+  .work-arrow {
+    height: 34px;
+    width: 34px;
+  }
+}
+@media(max-width:620px) {
+  .work-page-list {
+    padding: 22px 0 79px;
+  }
+}
+@media(max-width:620px) {
+  .work-filter {
+    align-items: start;
+    flex-direction: column;
+    margin-bottom: 28px;
+    gap: 13px;
+  }
+}
+@media(max-width:620px) {
+  .work-filter button {
+    font-size: 11px;
+    padding: 8px 12px;
+  }
+}
+@media(max-width:620px) {
+  .full-work-grid {
+    gap: 34px;
+  }
+}
+@media(max-width:620px) {
+  .detail-hero {
+    padding-top: 33px;
+  }
+}
+@media(max-width:620px) {
+  .detail-title {
+    margin: 35px 0 32px;
+  }
+}
+@media(max-width:620px) {
+  .detail-title h1 {
+    font-size: clamp(42px,11vw,65px);
+  }
+}
+@media(max-width:620px) {
+  .detail-title p {
+    font-size: 14px;
+  }
+}
+@media(max-width:620px) {
+  .detail-content {
+    padding: 31px 0 70px;
+  }
+}
+@media(max-width:620px) {
+  .detail-meta {
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+    padding-bottom: 28px;
+  }
+}
+@media(max-width:620px) {
+  .detail-meta>div:last-child {
+    grid-column: 1/-1;
+  }
+}
+@media(max-width:620px) {
+  .detail-body {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    padding-top: 48px;
+  }
+}
+@media(max-width:620px) {
+  .detail-body h2 {
+    font-size: 29px;
+  }
+}
+@media(max-width:620px) {
+  .detail-body p {
+    font-size: 14px;
+  }
+}
+@media(max-width:620px) {
+  .detail-body section {
+    margin-bottom: 33px;
+  }
+}
+@media(max-width:620px) {
+  .next-project {
+    padding: 49px 0;
+  }
+}
+@media(max-width:620px) {
+  .next-project h2 {
+    font-size: clamp(31px,8.4vw,47px);
+  }
+}
+@media(hover:none),(pointer:coarse) {
+  .work-card-tilt {
+    transform: none!important;
+  }
+}
+.work-card {
+  transition: transform .38s cubic-bezier(.22,1,.36,1);
+}
+.work-card:hover .work-card-info h3 {
+  color: var(--red);
+  transition: color .25s;
+}
+.work-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background: transparent;
+}
+.work-card-tilt {
+  border-radius: 14px;
+  overflow: hidden;
+}
+.work-card-info {
+  padding: 24px 2px 12px;
+}
+.work-card-info h3 {
+  font-size: clamp(23px,2vw,30px);
+  font-weight: 600;
+  letter-spacing: -.055em;
+}
+.work-card-info p {
+  font-size: 16px;
+}
+.work-detail p {
+  font-size: 17px;
+  line-height: 1.8;
+}

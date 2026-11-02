@@ -1,0 +1,50 @@
+/* Styles for components/PageTransition.jsx. Responsive and motion rules are kept with this component. */
+.v12-route-curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  pointer-events: none;
+  background: #880d1e;
+  display: grid;
+  place-items: center;
+  color: #fff;
+  contain: layout style paint;
+}
+.v12-route-curtain::before {
+  content: "";
+  position: absolute;
+  inset: -15%;
+  background: repeating-linear-gradient(124deg,transparent 0 100px,rgba(255,255,255,.045) 101px 103px,transparent 105px 190px);
+  transform: skewX(-11deg);
+}
+.v12-curtain-brand {
+  position: relative;
+  display: grid;
+  place-items: center;
+  gap: 12px;
+  font-size: clamp(11px,1vw,15px);
+  letter-spacing: .22em;
+  font-weight: 650;
+}
+.v12-curtain-brand img {
+  display: block;
+  width: clamp(84px,11vw,154px);
+  height: clamp(84px,11vw,154px);
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+.v12-curtain-index {
+  position: absolute;
+  bottom: 30px;
+  right: 6vw;
+  font-size: 11px;
+  letter-spacing: .16em;
+  opacity: .62;
+}
+@media(max-width:650px) {
+  .v12-curtain-index {
+    font-size: 9px;
+    right: 15px;
+    bottom: 18px;
+  }
+}

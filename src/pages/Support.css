@@ -1,0 +1,159 @@
+/* Styles for pages/Support.jsx. Responsive and motion rules are kept with this component. */
+.v9-support-page {
+  padding-top: 100px;
+  padding-bottom: 125px;
+}
+.v9-support-heading {
+  max-width: 850px;
+  margin-bottom: 63px;
+}
+.v9-support-heading h1 {
+  font-size: clamp(50px,6.5vw,90px);
+  line-height: 1.1;
+  letter-spacing: -.065em;
+  margin: 24px 0;
+}
+.v9-support-heading h1 em {
+  font-style: normal;
+  color: var(--red);
+}
+.v9-support-heading p {
+  font-size: 20px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 670px;
+}
+.v9-support-layout {
+  display: grid;
+  grid-template-columns: minmax(0,1.1fr) minmax(240px,.65fr);
+  gap: clamp(35px,5vw,80px);
+  align-items: start;
+}
+.v9-support-main {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--soft);
+  padding: clamp(24px,3vw,45px);
+}
+.v9-support-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 25px;
+}
+.v9-support-card-top h2 {
+  font-size: 33px;
+  letter-spacing: -.04em;
+  margin: 8px 0 0;
+}
+.v9-support-card-top svg {
+  color: var(--red);
+}
+.v9-qr-wrap {
+  display: grid;
+  justify-items: center;
+  padding: 36px 0 20px;
+}
+.v9-qr-wrap img {
+  width: min(100%,310px);
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 10px;
+  background: #fff;
+  padding: 12px;
+  object-fit: contain;
+}
+.v9-qr-wrap p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 17px 0 0;
+}
+.v9-payment-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 13px;
+  align-items: center;
+}
+.v9-copy-payment {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 13px 19px;
+  color: var(--ink);
+  font-size: 14px;
+}
+.v9-payment-disclaimer {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--muted);
+  margin: 22px 0 0;
+}
+.v9-support-aside {
+  border-top: 1px solid var(--line);
+  padding-top: 28px;
+}
+.v9-support-aside h2 {
+  font-size: 32px;
+  letter-spacing: -.045em;
+}
+.v9-support-aside>p {
+  font-size: 17px;
+  color: var(--muted);
+}
+.v9-support-options {
+  margin: 34px 0;
+}
+.v9-support-options>div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 11px;
+  border-top: 1px solid var(--line);
+  padding: 20px 0;
+}
+.v9-support-options strong {
+  font-weight: 600;
+  font-size: 14px;
+}
+.v9-support-options a {
+  color: var(--red);
+  font-size: 13px;
+}
+@media(max-width:920px) {
+  .v9-support-layout {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+}
+@media(max-width:650px) {
+  .v9-support-page {
+    padding-top: 65px;
+    padding-bottom: 82px;
+  }
+}
+@media(max-width:650px) {
+  .v9-support-layout {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+}
+@media(max-width:650px) {
+  .v9-support-heading {
+    margin-bottom: 35px;
+  }
+}
+@media(max-width:650px) {
+  .v9-support-heading p {
+    font-size: 17px;
+  }
+}
+@media(max-width:650px) {
+  .v9-support-aside {
+    margin-top: 20px;
+  }
+}

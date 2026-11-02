@@ -1,0 +1,6 @@
+{
+  // Change this to match the Pages project name already shown in Cloudflare.
+  "name": "himalnpne-portfolio",
+  "compatibility_date": "2026-11-01",
+  "pages_build_output_dir": "./dist"
+}

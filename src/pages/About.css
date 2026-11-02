@@ -1,0 +1,221 @@
+/* Styles for pages/About.jsx. Responsive and motion rules are kept with this component. */
+.about-portrait-grid {
+  display: grid;
+  grid-template-columns: .95fr 1.05fr;
+  gap: 9%;
+  align-items: center;
+  padding-top: 105px;
+}
+.about-poster {
+  height: 490px;
+  background: #e7e8e2;
+  color: #343434;
+  border-radius: 7px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 27px 29px;
+  overflow: hidden;
+}
+.about-poster-top {
+  display: flex;
+  justify-content: space-between;
+  color: #797c73;
+  font-size: 11px;
+}
+.about-poster-orbit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  font-size: clamp(130px,14vw,240px);
+  font-weight: 500;
+  letter-spacing: -.13em;
+  line-height: 1;
+  color: #555750;
+}
+.about-poster-orbit span:last-child {
+  color: #880d1e;
+  transform: translateY(21px);
+}
+.about-poster p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #6c6d67;
+}
+.about-long-copy {
+  padding: 20px 0;
+}
+.about-long-copy h2 {
+  font-size: clamp(34px,4vw,57px);
+  font-weight: 500;
+  letter-spacing: -.057em;
+  line-height: 1.18;
+  margin: 17px 0 26px;
+}
+.about-tools {
+  border-top: 1px solid var(--line);
+  margin-top: 35px;
+}
+.about-tool-row {
+  display: grid;
+  grid-template-columns: 70px 1fr 1.15fr;
+  gap: 25px;
+  border-bottom: 1px solid var(--line);
+  padding: 23px 0;
+  align-items: center;
+}
+.about-tool-row>span {
+  font-size: 12px;
+  color: var(--red);
+}
+.about-tool-row h3 {
+  font-size: 19px;
+  letter-spacing: -.04em;
+  font-weight: 500;
+  margin: 0;
+}
+.about-tool-row p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+}
+.journey-section {
+  background: var(--soft);
+  padding: 95px 0 100px;
+}
+.journey-row {
+  border-top: 1px solid var(--line);
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 32px;
+  padding: 28px 0;
+}
+.journey-row:last-child {
+  border-bottom: 1px solid var(--line);
+}
+.journey-row>span {
+  font-size: 12px;
+  color: var(--red);
+  padding-top: 7px;
+}
+.journey-row h3 {
+  font-size: 23px;
+  letter-spacing: -.045em;
+  font-weight: 500;
+  margin: 0 0 7px;
+}
+.journey-row strong {
+  font-size: 13px;
+  font-weight: 500;
+}
+.journey-row p {
+  font-size: 13px;
+  color: var(--muted);
+  max-width: 550px;
+  line-height: 1.85;
+  margin: 9px 0 0;
+}
+@media(max-width:1100px) {
+  .about-portrait-grid {
+    gap: 5%;
+  }
+}
+@media(max-width:850px) {
+  .about-portrait-grid {
+    grid-template-columns: 1fr;
+    max-width: 710px;
+    gap: 38px;
+  }
+}
+@media(max-width:850px) {
+  .about-poster {
+    height: 400px;
+  }
+}
+@media(max-width:850px) {
+  .about-poster-orbit {
+    font-size: 165px;
+  }
+}
+@media(max-width:850px) {
+  .about-long-copy {
+    padding: 0;
+  }
+}
+@media(max-width:620px) {
+  .about-portrait-grid {
+    padding-top: 60px;
+  }
+}
+@media(max-width:620px) {
+  .about-poster {
+    height: 300px;
+    padding: 19px;
+  }
+}
+@media(max-width:620px) {
+  .about-poster-orbit {
+    font-size: 145px;
+  }
+}
+@media(max-width:620px) {
+  .about-long-copy h2 {
+    font-size: clamp(34px,9vw,47px);
+  }
+}
+@media(max-width:620px) {
+  .about-tool-row {
+    grid-template-columns: 28px 1fr;
+    gap: 6px 15px;
+    padding: 23px 0;
+  }
+}
+@media(max-width:620px) {
+  .about-tool-row h3 {
+    font-size: 18px;
+  }
+}
+@media(max-width:620px) {
+  .about-tool-row p {
+    grid-column: 2;
+    font-size: 12px;
+  }
+}
+@media(max-width:620px) {
+  .journey-section {
+    padding: 65px 0;
+  }
+}
+@media(max-width:620px) {
+  .journey-row {
+    grid-template-columns: 80px 1fr;
+    gap: 14px;
+  }
+}
+@media(max-width:620px) {
+  .journey-row h3 {
+    font-size: 20px;
+  }
+}
+@media(max-width:620px) {
+  .journey-row p {
+    font-size: 12px;
+  }
+}
+.about-handle {
+  color: var(--muted);
+  font-size: 12px!important;
+  line-height: 1.7!important;
+  margin: 12px 0 24px!important;
+}
+.about-handle a {
+  color: var(--red);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb,var(--red) 25%,transparent);
+  text-underline-offset: 3px;
+}
+.about-intro p {
+  font-size: 17px;
+  line-height: 1.8;
+}

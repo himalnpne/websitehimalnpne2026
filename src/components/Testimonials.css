@@ -1,0 +1,200 @@
+/* Styles for components/Testimonials.jsx. Responsive and motion rules are kept with this component. */
+.testimonial-heading h2 {
+  font-family: 'Tektur','Geologica',sans-serif;
+  font-weight: 600;
+  letter-spacing: -.055em;
+  line-height: 1.08;
+}
+.testimonials {
+  overflow: hidden;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 100px;
+}
+.testimonial-heading {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 10%;
+  align-items: end;
+  margin: 45px 0 55px;
+}
+.testimonial-heading h2 {
+  font-size: clamp(40px,5vw,75px);
+  margin: 0;
+}
+.testimonial-heading h2 em {
+  font-style: normal;
+  color: var(--red);
+}
+.testimonial-heading>p {
+  font-size: 17px;
+  color: var(--muted);
+  max-width: 450px;
+}
+.testimonial-viewport {
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(to right,transparent,#000 7%,#000 93%,transparent);
+}
+.testimonial-track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+}
+.testimonial-card {
+  flex: 0 0 min(430px,80vw);
+  padding: 32px 36px;
+  min-height: 286px;
+  background: var(--soft);
+  border: 1px solid var(--line);
+  border-radius: 17px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.testimonial-number {
+  font-size: 12px;
+  color: var(--muted);
+}
+.testimonial-card blockquote {
+  font-family: 'Geologica',sans-serif;
+  font-size: clamp(21px,2vw,29px);
+  line-height: 1.48;
+  letter-spacing: -.04em;
+  margin: 20px 0;
+}
+.testimonial-card p {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+}
+@keyframes quote-drift {
+  to {
+    transform: translateX(calc(-50% - 10px));
+  }
+}
+@media(max-width:850px) {
+  .testimonial-heading {
+    gap: 28px;
+  }
+}
+@media(max-width:650px) {
+  .testimonial-heading {
+    grid-template-columns: 1fr;
+    margin: 34px 0;
+  }
+}
+@media(max-width:650px) {
+  .testimonial-card {
+    padding: 25px;
+    min-height: 245px;
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+}
+@media(prefers-reduced-motion:reduce) {
+  .testimonial-viewport {
+    overflow-x: auto;
+    mask-image: none;
+  }
+}
+:root.motion-off .testimonial-viewport {
+  overflow-x: auto;
+  mask-image: none;
+}
+.v11-quote-intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+.v11-quote-intro p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--muted);
+  max-width: 470px;
+  margin: 0;
+}
+.v11-quote-play {
+  display: inline-flex;
+  gap: 9px;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1.5;
+  transition: border-color .25s,color .25s,transform .25s;
+}
+.v11-quote-play:hover {
+  border-color: var(--red);
+  color: var(--red);
+  transform: translateY(-2px);
+}
+.v11-quote-play svg {
+  flex: none;
+}
+.v11-quote-card {
+  background: color-mix(in srgb,var(--soft) 79%,var(--paper));
+  transition: border-color .3s,transform .3s,box-shadow .3s;
+}
+.v11-quote-card:hover {
+  border-color: color-mix(in srgb,var(--red) 28%,var(--line));
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0,0,0,.035);
+}
+.v11-quote-card .testimonial-number {
+  color: var(--red);
+}
+@media(max-width:600px) {
+  .v11-quote-intro {
+    gap: 14px;
+  }
+}
+@media(max-width:600px) {
+  .v11-quote-play {
+    font-size: 13px;
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+}
+@media(prefers-reduced-motion:reduce) {
+  .v11-quote-card {
+    transition: none!important;
+  }
+}
+:root.motion-off .v11-quote-viewport {
+  overflow-x: auto;
+  mask-image: none;
+}
+@keyframes v12-testimonial-drift {
+  from {
+    transform: translate3d(0,0,0);
+  }
+  to {
+    transform: translate3d(calc(-50% - 10px),0,0);
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+}
+@media(prefers-reduced-motion:reduce) {
+  .v12-quote-viewport {
+    mask-image: none;
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  .v12-quote-viewport {
+    overflow-x: auto;
+  }
+}
+:root.motion-off .v12-quote-viewport {
+  overflow-x: auto;
+  mask-image: none;
+}
+
+.testimonial-group { display: flex; gap: 20px; padding-right: 20px; width: max-content; }
+.testimonial-group .testimonial-card { width: min(430px,80vw); flex: 0 0 auto; }

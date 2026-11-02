@@ -1,0 +1,32 @@
+/* Styles for components/ProjectCard.jsx. Responsive and motion rules are kept with this component. */
+.project-hover-surface {
+  --shine-x: 50%;
+  --shine-y: 50%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  isolation: isolate;
+}
+.project-hover-surface:after {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  background: radial-gradient(260px circle at var(--shine-x) var(--shine-y),rgba(255,255,255,.16),transparent 75%);
+  opacity: 0;
+  transition: opacity .3s;
+}
+.work-card:hover .project-hover-surface:after {
+  opacity: 1;
+}
+@media(hover:none),(pointer:coarse) {
+  .project-hover-surface:after {
+    display: none;
+  }
+}
+.v10-featured-card .project-hover-surface {
+  border-radius: 15px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+}

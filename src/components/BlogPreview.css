@@ -1,0 +1,43 @@
+/* One horizontal row of recent posts with touch, button and autoplay controls. */
+.home-journal { margin-top: 5px; }
+.home-journal-toolbar { display:flex; justify-content:space-between; align-items:center; gap:20px; padding:9px 0 22px; }
+.home-journal-toolbar > p { margin:0; color:var(--muted); font-size:13px; }
+.home-journal-controls { display:flex; align-items:center; gap:8px; }
+.home-journal-controls button { display:grid; width:38px; height:38px; place-items:center; border:1px solid var(--line); border-radius:50%; background:var(--card); color:var(--ink); cursor:pointer; transition:background .2s,color .2s,border-color .2s; }
+.home-journal-controls button:hover { background:var(--ink); border-color:var(--ink); color:var(--card); }
+.home-journal-grid { display:flex; gap:22px; overflow-x:auto; overscroll-behavior-x:contain; scroll-snap-type:x mandatory; scrollbar-width:none; -webkit-overflow-scrolling:touch; }
+.home-journal-grid::-webkit-scrollbar { display:none; }
+.home-journal-item { flex:0 0 calc((100% - 44px) / 3); min-width:0; scroll-snap-align:start; }
+.home-journal-card { display:flex; flex-direction:column; height:100%; padding:0 0 8px; color:var(--ink); text-decoration:none; }
+.home-journal-cover { width:100%; aspect-ratio:1.58; position:relative; overflow:hidden; border:1px solid var(--line); border-radius:12px; background:var(--soft); }
+.home-journal-cover img { display:block; width:100%; height:100%; object-fit:contain; transition:transform .6s cubic-bezier(.2,.7,.2,1); }
+.home-journal-cover.has-cover { background:#e5e5e2; }
+.home-journal-card:hover .home-journal-cover img { transform:scale(1.035); }
+.home-journal-image-arrow { position:absolute; top:13px; right:13px; display:grid; width:33px; height:33px; place-items:center; border-radius:50%; background:rgba(255,255,255,.94); color:#343434; box-shadow:0 2px 10px rgba(0,0,0,.07); opacity:0; transform:translateY(-5px); transition:opacity .25s,transform .25s; }
+.home-journal-card:hover .home-journal-image-arrow,.home-journal-card:focus-visible .home-journal-image-arrow { opacity:1; transform:translateY(0); }
+.home-journal-cover-fallback { position:absolute; inset:0; display:flex; flex-direction:column; justify-content:space-between; padding:24px; background:linear-gradient(145deg,var(--soft),var(--card)); color:var(--ink); }
+.home-journal-cover-fallback > span { color:var(--muted); font-size:11px; letter-spacing:.12em; }
+.home-journal-cover-fallback strong { font-family:Tektur,Geologica,sans-serif; font-size:clamp(34px,3.4vw,54px); font-weight:500; letter-spacing:-.05em; line-height:1.1; }
+.home-journal-meta { display:flex; justify-content:space-between; gap:15px; margin:20px 0 10px; color:var(--muted); font-size:12px; font-weight:500; }
+.home-journal-meta > span { color:var(--red); }
+.home-journal-card h3 { min-height:2.56em; margin:0 0 10px; font-size:clamp(21px,2vw,28px); font-weight:600; letter-spacing:-.04em; line-height:1.28; transition:color .2s; }
+.home-journal-card:hover h3 { color:var(--red); }
+.home-journal-card > p { display:-webkit-box; overflow:hidden; margin:0 0 22px; color:var(--muted); font-size:14px; line-height:1.65; -webkit-box-orient:vertical; -webkit-line-clamp:2; line-clamp:2; }
+.home-journal-bottom { display:flex; justify-content:space-between; align-items:center; gap:10px; margin-top:auto; padding-top:14px; border-top:1px solid var(--line); color:var(--muted); font-size:12px; }
+.home-journal-bottom > span:last-child { display:inline-flex; align-items:center; gap:6px; color:var(--ink); font-weight:500; }
+.home-journal-footer { display:flex; justify-content:space-between; align-items:center; gap:18px; margin-top:29px; }
+.home-journal-footer > span { color:var(--muted); font-size:12px; }
+.home-journal-footer > a { display:inline-flex; align-items:center; gap:12px; padding-bottom:6px; border-bottom:1px solid var(--red); font-size:14px; font-weight:600; transition:gap .2s; }
+.home-journal-footer > a:hover { gap:18px; }
+@media (max-width:850px) { .home-journal-item { flex-basis:calc((100% - 16px) / 2); } }
+@media (max-width:600px) {
+  .home-journal-toolbar { padding-bottom:18px; }
+  .home-journal-toolbar > p { max-width:190px; font-size:12px; }
+  .home-journal-grid { gap:16px; }
+  .home-journal-item { flex-basis:100%; }
+  .home-journal-cover { aspect-ratio:1.58; }
+  .home-journal-card h3 { min-height:0; font-size:22px; }
+  .home-journal-image-arrow { opacity:1; transform:none; }
+  .home-journal-footer { justify-content:flex-end; }
+  .home-journal-footer > span { display:none; }
+}

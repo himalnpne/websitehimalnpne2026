@@ -1,0 +1,72 @@
+/* Styles for PageIntro.jsx */
+
+.page-intro {
+  padding: 95px 0 75px;
+  border-bottom: 1px solid var(--line);
+}
+.page-intro-grid {
+  margin-top: 25px;
+}
+.page-intro h1 {
+  font-size: clamp(56px,6.9vw,101px);
+  line-height: 1.13;
+  letter-spacing: -.067em;
+  font-weight: 500;
+  margin: 0;
+}
+.page-intro h1 em {
+  font-style: normal;
+  color: var(--red);
+}
+.page-intro-grid p {
+  font-size: 16px;
+  line-height: 1.85;
+  max-width: 570px;
+  color: var(--muted);
+  margin: 30px 0 0;
+}
+@media(max-width:850px) {
+  .page-intro {
+    padding: 70px 0 58px;
+  }
+}
+@media(max-width:850px) {
+  .page-intro h1 {
+    font-size: clamp(58px,8vw,83px);
+  }
+}
+@media(max-width:620px) {
+  .page-intro {
+    padding: 61px 0 52px;
+  }
+}
+@media(max-width:620px) {
+  .page-intro h1 {
+    font-size: clamp(45px,12vw,71px);
+  }
+}
+@media(max-width:620px) {
+  .page-intro-grid p {
+    font-size: 14px;
+    line-height: 1.8;
+    margin-top: 21px;
+  }
+}
+.page-intro h1 {
+  letter-spacing: -.055em;
+  line-height: 1.1;
+}
+@media (max-width: 620px) {
+  .page-intro h1 {
+    font-size: clamp(44px, 11vw, 66px);
+  }
+}
+.page-intro p:not(.eyebrow) {
+  font-size: 18px;
+  line-height: 1.75;
+}
+@media(max-width:650px) {
+  .page-intro p:not(.eyebrow) {
+    font-size: 16px;
+  }
+}

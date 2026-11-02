@@ -1,0 +1,24 @@
+/* Styles for SectionHeading.jsx */
+
+.section-mark {
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 12px;
+}
+.section-mark>span:first-child {
+  font-weight: 500;
+  color: var(--ink);
+}
+@media(max-width:620px) {
+  .section-mark {
+    font-size: 11px;
+  }
+}
+.section-mark {
+  font-size: 13px;
+  letter-spacing: .055em;
+}

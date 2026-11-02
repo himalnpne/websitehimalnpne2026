@@ -1,0 +1,107 @@
+/* Styles for components/MyApproach.jsx. Responsive and motion rules are kept with this component. */
+.v12-scroll-reel {
+  position: relative;
+  overflow: hidden;
+  background: #222a29;
+  color: #f8f8f5;
+  min-height: clamp(440px,72svh,730px);
+  display: flex;
+  align-items: center;
+  isolation: isolate;
+}
+.v12-scroll-reel:before {
+  content: '';
+  position: absolute;
+  inset: -40%;
+  border: 1px solid rgba(255,255,255,.06);
+  background: repeating-radial-gradient(ellipse at 42% 53%,transparent 0 63px,rgba(240,240,232,.08) 64px 65px,transparent 67px 111px);
+  opacity: .42;
+  z-index: -1;
+  pointer-events: none;
+}
+.v12-reel-inner {
+  position: relative;
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+.v12-reel-index {
+  display: block;
+  color: #c5c9c2;
+  font-size: 12px;
+  letter-spacing: .13em;
+  margin-bottom: 42px;
+}
+.v12-reel-inner h2 {
+  position: relative;
+  z-index: 1;
+  font-family: Tektur,Geologica,sans-serif;
+  font-size: clamp(55px,8vw,128px);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -.072em;
+  max-width: 1120px;
+  margin: 0;
+}
+.v12-reel-inner h2 em {
+  font-style: normal;
+  color: #f2c7ce;
+}
+.v12-reel-inner p {
+  position: relative;
+  z-index: 1;
+  color: #d2d9d4;
+  font-size: clamp(15px,1.55vw,20px);
+  max-width: 570px;
+  line-height: 1.7;
+  margin: 36px 0 0;
+}
+.v12-reel-accent {
+  position: absolute;
+  top: 30%;
+  right: -25%;
+  width: 85%;
+  height: 30%;
+  background: linear-gradient(100deg,rgba(136,13,30,0),#880d1e 54%,#b44d5c);
+  transform: skewX(-25deg) rotate(-9deg);
+  filter: blur(2px);
+  opacity: .7;
+  z-index: 0;
+  pointer-events: none;
+}
+@media(max-width:650px) {
+  .v12-scroll-reel {
+    min-height: 490px;
+  }
+}
+@media(max-width:650px) {
+  .v12-reel-inner {
+    padding-top: 75px;
+    padding-bottom: 75px;
+  }
+}
+@media(max-width:650px) {
+  .v12-reel-index {
+    font-size: 10px;
+    letter-spacing: .09em;
+    margin-bottom: 25px;
+  }
+}
+@media(max-width:650px) {
+  .v12-reel-inner h2 {
+    font-size: clamp(49px,11.7vw,70px);
+  }
+}
+@media(max-width:650px) {
+  .v12-reel-inner p {
+    font-size: 16px;
+    line-height: 1.7;
+  }
+}
+@media(prefers-reduced-motion:reduce) {
+  .v12-reel-inner h2 {
+    clip-path: none!important;
+  }
+}
+:root.motion-off .v12-reel-inner h2 {
+  clip-path: none!important;
+}

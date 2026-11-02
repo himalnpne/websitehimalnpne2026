@@ -1,0 +1,39 @@
+/* Styles for App.jsx. Responsive and motion rules are kept with this component. */
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 20px;
+  z-index: 1000;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 9px 14px;
+}
+.skip-link:focus {
+  top: 10px;
+}
+.global-progress {
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2px;
+  background: var(--red);
+  transform-origin: left;
+  pointer-events: none;
+}
+.missing-page {
+  padding-block: 140px;
+}
+.missing-page h1 {
+  font-size: clamp(45px,6vw,82px);
+  letter-spacing: -.06em;
+  font-weight: 500;
+}
+.missing-page a {
+  border-bottom: 1px solid var(--ink);
+  font-size: 14px;
+}
+.missing-page h1 {
+  line-height: 1.1;
+}
