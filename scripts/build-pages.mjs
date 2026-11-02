@@ -49,7 +49,14 @@ function findMetaObject(source){
  throw new Error('Unterminated post metadata');
 }
 
-const postFiles=(await readdir(join(root,'src/posts'))).filter(name=>name.endsWith('.jsx'));
+const postDir = join(root, 'src/posts');
+let postFiles = [];
+
+try {
+  postFiles = (await readdir(postDir)).filter(name => name.endsWith('.jsx'));
+} catch (error) {
+  if (error.code !== 'ENOENT') throw error;
+}
 const posts=[];
 for(const file of postFiles){
  const source=await readFile(join(root,'src/posts',file),'utf8');
@@ -92,7 +99,7 @@ async function articleBody(post){
  await mkdir(tempDir,{recursive:true});
  try{
   const out=join(tempDir,post.slug+'.mjs');
-  await esbuild({entryPoints:[join(root,'src/posts',post.file)],outfile:out,bundle:true,platform:'node',format:'esm',jsx:'automatic',packages:'external',logLevel:'silent'});
+await esbuild({entryPoints:[join(postDir,post.file)],outfile:out,bundle:true,platform:'node',format:'esm',jsx:'automatic',packages:'external',logLevel:'silent'});
   const mod=await import(pathToFileURL(out).href);
   if(typeof mod.default!=='function')throw new Error('No default article component');
   return renderToStaticMarkup(React.createElement(mod.default));
